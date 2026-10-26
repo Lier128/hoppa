@@ -1,0 +1,129 @@
+/* ============================================================
+   HOPPA 设计令牌
+   品牌气质：年轻、轻松、友好、有一点潮流感（参考原型：粉紫渐变 + 暖白 + 浅桃色）
+   原则：粉紫只用于强调，正文始终高对比；所有颜色都从这里取，页面里不写死十六进制
+   ============================================================ */
+
+:root {
+  /* ---- 品牌色（粉 / 紫） */
+  --pink-50: #fff2f8;
+  --pink-100: #ffe3f1;
+  --pink-200: #ffc7e3;
+  --pink-300: #ff9fd0;
+  --pink-400: #ff74b6;
+  --pink-500: #f5429b;
+  --pink-600: #d81f80;
+  --pink-700: #b31369;
+
+  --violet-50: #f6f2ff;
+  --violet-100: #eee6ff;
+  --violet-200: #ddccff;
+  --violet-300: #c3a6ff;
+  --violet-400: #a878ff;
+  --violet-500: #8b4cf5;
+  --violet-600: #7432d8;
+
+  /* ---- 背景 / 表面（暖白 + 浅桃） */
+  --bg: #fff8f4;
+  --bg-peach: #ffefe6;
+  --bg-gradient: radial-gradient(1200px 600px at 12% -10%, #ffe6f1 0%, rgba(255, 230, 241, 0) 60%),
+    radial-gradient(900px 520px at 100% 0%, #f1e8ff 0%, rgba(241, 232, 255, 0) 55%),
+    linear-gradient(180deg, #fff9f5 0%, #fff8f4 100%);
+  --surface: #ffffff;
+  --surface-2: #fffaf7;
+  --surface-3: #fdf1f6;
+
+  /* ---- 文本 */
+  --ink: #2a1d33;
+  --ink-2: #5e4b66;
+  --ink-3: #93819c;
+  --ink-inverse: #ffffff;
+
+  /* ---- 边框 / 分隔 */
+  --line: #f4e4ec;
+  --line-strong: #ecd8e3;
+
+  /* ---- 语义色 */
+  --success: #1f9d63;
+  --success-soft: #e6f7ee;
+  --warning: #b45309;
+  --warning-soft: #fff4e5;
+  --danger: #d92d4b;
+  --danger-soft: #ffe8ed;
+  --info: #2f6fed;
+  --info-soft: #e9f1ff;
+
+  /* ---- 渐变 */
+  --gradient-brand: linear-gradient(120deg, #ff5fa2 0%, #f5429b 42%, #a35cff 100%);
+  --gradient-brand-soft: linear-gradient(120deg, #ffe3f1 0%, #ffeef7 45%, #eee6ff 100%);
+  --gradient-sunset: linear-gradient(135deg, #ff9a6b 0%, #ff5fa2 55%, #a35cff 100%);
+
+  /* ---- 圆角（PRD：卡片 14–20px） */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-full: 999px;
+
+  /* ---- 阴影 */
+  --shadow-xs: 0 1px 2px rgba(42, 29, 51, 0.05);
+  --shadow-sm: 0 2px 8px rgba(42, 29, 51, 0.06);
+  --shadow-md: 0 10px 28px -12px rgba(42, 29, 51, 0.18);
+  --shadow-lg: 0 24px 60px -24px rgba(42, 29, 51, 0.28);
+  --shadow-glow: 0 10px 24px -10px rgba(245, 66, 155, 0.55);
+
+  /* ---- 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ---- 字体 */
+  --font-sans: 'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei UI', 'Microsoft YaHei',
+    'Noto Sans SC', 'Source Han Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-latin: 'Avenir Next', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', Consolas, 'Courier New', monospace;
+
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+  --text-4xl: 46px;
+
+  /* ---- 布局 */
+  --container: 1180px;
+  --sidebar-w: 244px;
+  --topbar-h: 60px;
+  --bottomnav-h: 64px;
+
+  /* ---- 动效 */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur: 220ms;
+
+  /* ---- 层级 */
+  --z-sticky: 20;
+  --z-nav: 40;
+  --z-overlay: 80;
+  --z-toast: 100;
+}
+
+/* 分类色（活动封面 / 标签共用） */
+:root {
+  --cat-citywalk: #f5429b;
+  --cat-food: #f4762f;
+  --cat-exhibition: #8b4cf5;
+  --cat-boardgame: #0f9e94;
+  --cat-sports: #2f9e44;
+  --cat-show: #b5179e;
+}

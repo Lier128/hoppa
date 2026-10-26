@@ -1,0 +1,351 @@
+/* 个人中心 */
+
+/* ---------------------------------------------------------- 个人头部 */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.heroBanner {
+  position: relative;
+  height: 104px;
+  overflow: hidden;
+  background: var(--gradient-brand);
+}
+
+.heroBanner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+  opacity: 0.5;
+  mask-image: linear-gradient(120deg, #000 20%, transparent 72%);
+}
+
+.heroBrand {
+  position: absolute;
+  right: 18px;
+  bottom: 2px;
+  font-family: var(--font-latin);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 40px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.32);
+  user-select: none;
+}
+
+.heroBody {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0 20px 20px;
+  flex-wrap: wrap;
+}
+
+.avatarRing {
+  flex: none;
+  display: inline-flex;
+  margin-top: -40px;
+  padding: 4px;
+  border-radius: var(--r-full);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.heroMain {
+  flex: 1;
+  min-width: 200px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.bio {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  max-width: 640px;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.prefs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  padding-top: 2px;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.prefs span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prefs svg {
+  color: var(--pink-400);
+  flex: none;
+}
+
+/* ---------------------------------------------------------- 统计 */
+
+.statsHint {
+  margin-top: 10px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+/* ---------------------------------------------------------- 最近活动 */
+
+.moreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--pink-600);
+  white-space: nowrap;
+}
+
+.moreLink:hover {
+  color: var(--pink-700);
+}
+
+.recentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+/* ---------------------------------------------------------- 快捷入口 */
+
+.quickGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.quickCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.quickCard:hover {
+  text-decoration: none;
+}
+
+.quickCardMuted {
+  opacity: 0.72;
+}
+
+.quickIcon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-md);
+  background: var(--gradient-brand-soft);
+  color: var(--pink-600);
+  box-shadow: inset 0 0 0 1px var(--pink-100);
+}
+
+.quickText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quickText strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.quickText span {
+  font-size: 11.5px;
+  color: var(--ink-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickArrow {
+  flex: none;
+  color: var(--ink-3);
+}
+
+.quickTag {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  background: var(--surface-3);
+  color: var(--ink-3);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.quickNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+.quickNote svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+/* ---------------------------------------------------------- 编辑资料弹窗 */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-full);
+  border: 2px solid transparent;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.65);
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+
+.swatch:hover {
+  transform: translateY(-1px);
+}
+
+.swatchOn {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px var(--pink-100);
+}
+
+.chipGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.customRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.customRow :global(.input) {
+  flex: 1;
+  min-width: 0;
+}
+
+.customRow :global(.btn) {
+  flex: none;
+}
+
+.selectedRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.selectedChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--pink-100);
+  background: var(--pink-50);
+  color: var(--pink-700);
+  font-size: 12px;
+  font-weight: 650;
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.selectedChip:hover {
+  background: var(--pink-100);
+}
+
+@media (max-width: 560px) {
+  .heroBanner {
+    height: 88px;
+  }
+
+  .heroBrand {
+    font-size: 32px;
+  }
+
+  .heroBody {
+    padding: 0 14px 16px;
+    gap: 10px;
+  }
+
+  .avatarRing {
+    margin-top: -34px;
+  }
+
+  .heroMain {
+    min-width: 0;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .name {
+    font-size: var(--text-lg);
+  }
+
+  .recentGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

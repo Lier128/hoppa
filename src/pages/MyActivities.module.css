@@ -1,0 +1,93 @@
+/* 我的活动：状态 Tab + 列表卡。操作按钮放在 ActivityCard 的 footer 里。 */
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--space-5);
+}
+
+/* 复用全局 .seg / .seg__item，只做可横向滚动的容器与移动端压缩 */
+.tabs {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs :global(.seg) {
+  display: flex;
+  width: 100%;
+  min-width: max-content;
+}
+
+.tabs :global(.seg__item) {
+  flex: 1 0 auto;
+  padding: 7px 12px;
+  white-space: nowrap;
+}
+
+.tabHint {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* footer 在 ActivityCard 的 <Link> 内部：按钮区用 preventDefault 阻止点按钮时跳详情 */
+.cardFoot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+
+.footTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.footActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footHint {
+  font-size: 11.5px;
+  color: var(--ink-3);
+  line-height: 1.55;
+}
+
+.emptyActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (max-width: 560px) {
+  .tabs :global(.seg__item) {
+    flex: 1;
+    padding: 7px 6px;
+    font-size: 12.5px;
+  }
+
+  .footActions :global(.btn) {
+    flex: 1 1 auto;
+  }
+}

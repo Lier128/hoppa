@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+dist-ssr/
+*.local
+
+# test artifacts
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+coverage/
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# logs
+*.log
+npm-debug.log*
+logs/
+
+# env
+.env
+.env.*
+!.env.example
+
+# local scratch
+.tmp/
+scratch/
+
+# 原始输入材料：已归档到 docs/product 与 docs/design-reference，不入库
+HOPPA_产品文档包_v1.0/
+
+# 原始原型截图含第三方图片素材，只保留在本地，不公开发布
+docs/design-reference/

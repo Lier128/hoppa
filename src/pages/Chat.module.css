@@ -1,0 +1,254 @@
+/* 活动群聊 */
+
+.page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.headMain {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.titleRow :global(.tag) {
+  flex: none;
+  font-size: 10px;
+  padding: 1px 7px;
+  line-height: 1.7;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  min-width: 0;
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+.metaRow span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metaRow svg {
+  flex: none;
+  color: var(--pink-400);
+}
+
+.headActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+
+.headActions :global(.btn) {
+  padding: 0 12px;
+}
+
+/* 消息气泡里的附加信息 */
+.msgMain {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+}
+
+.mine {
+  align-items: flex-end;
+}
+
+.sender {
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: 650;
+  color: var(--ink-3);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.msgMain .bubble {
+  white-space: pre-wrap;
+  max-width: 100%;
+}
+
+.mine :global(.msg__bubble) {
+  /* 与右侧头像对齐：本人气泡右下角保持圆角收口 */
+  max-width: 100%;
+}
+
+/* 空群聊：活动规则 / 集合信息 */
+.emptyChat {
+  margin: auto;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  border-radius: var(--r-md);
+  border: 1px dashed var(--line-strong);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.emptyTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.emptyTitle svg {
+  color: var(--pink-500);
+}
+
+.emptyDesc {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+/* 非成员提示 */
+.lockNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--warning-soft);
+  color: var(--warning);
+  border-top: 1px solid #f7e2c2;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.lockNotice svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.lockNotice a {
+  margin-left: 4px;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* 输入区 */
+.composerArea {
+  background: var(--surface);
+}
+
+.counter {
+  padding: 6px 16px 0;
+  text-align: right;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.composerInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  max-height: 120px;
+  padding: 10px 14px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line-strong);
+  background: var(--surface-2);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: none;
+}
+
+.composerInput::placeholder {
+  color: #b9a8c1;
+}
+
+.composerInput:focus {
+  outline: none;
+  border-color: var(--pink-400);
+  box-shadow: 0 0 0 4px rgba(245, 66, 155, 0.12);
+}
+
+.composerInput:disabled {
+  background: var(--surface-3);
+  color: var(--ink-3);
+  cursor: not-allowed;
+}
+
+.sendBtn {
+  flex: none;
+  align-self: flex-end;
+}
+
+.composerHint {
+  margin: 0;
+  padding: 6px 16px 10px;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+@media (max-width: 560px) {
+  .title {
+    font-size: 14.5px;
+  }
+
+  .metaRow span:nth-child(2) {
+    display: none;
+  }
+
+  .headActions :global(.btn) {
+    padding: 0 10px;
+  }
+
+  :global(.chat__head) {
+    padding: 10px;
+  }
+
+  .composerHint {
+    padding-bottom: 8px;
+  }
+}
+
+/* 桌面端头部留白略大，与内容列对齐 */
+@media (min-width: 901px) {
+  .headMain {
+    gap: 4px;
+  }
+}

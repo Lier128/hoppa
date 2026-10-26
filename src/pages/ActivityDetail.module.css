@@ -1,0 +1,562 @@
+/* 活动详情页：单页转化核心，桌面双列 / 移动单列 + 固定操作栏 */
+
+.pageRoot {
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------- 返回行 */
+
+.backRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-2);
+  border-radius: var(--r-full);
+  padding: 4px 6px 4px 2px;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.backLink:hover {
+  color: var(--pink-600);
+}
+
+/* ---------------------------------------------------------- 封面 */
+
+.cover {
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.coverOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 11px 13px;
+  background: linear-gradient(
+    180deg,
+    rgba(42, 29, 51, 0.2) 0%,
+    rgba(42, 29, 51, 0) 34%,
+    rgba(42, 29, 51, 0.55) 100%
+  );
+}
+
+.coverFoot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.coverTime {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(42, 29, 51, 0.35);
+}
+
+.coverPrice {
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--pink-700);
+  font-size: 12.5px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------- 标题区 */
+
+.head {
+  margin-top: var(--space-4);
+}
+
+.title {
+  margin-top: 10px;
+  font-size: var(--text-2xl);
+  letter-spacing: -0.02em;
+  line-height: 1.32;
+}
+
+.subline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+.dot {
+  color: var(--ink-3);
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-3);
+}
+
+.banner {
+  margin-top: var(--space-4);
+}
+
+/* ---------------------------------------------------------- 双列布局 */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 336px;
+  gap: var(--space-6);
+  margin-top: var(--space-5);
+  align-items: start;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: var(--space-5);
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------- 区块 */
+
+.blockTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-3);
+  font-size: var(--text-md);
+  font-weight: 800;
+}
+
+.blockTitle svg {
+  color: var(--pink-500);
+  flex: none;
+}
+
+.blockTitleFlush {
+  margin-bottom: 0;
+}
+
+.blockHead {
+  margin-bottom: var(--space-3);
+  gap: var(--space-3);
+}
+
+.blockFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-3);
+}
+
+.valueHint {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-3);
+  line-height: 1.6;
+}
+
+.paragraph {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink-2);
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+/* ---------------------------------------------------------- 注意事项 */
+
+.notesBox {
+  margin-top: var(--space-4);
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: var(--warning-soft);
+  border: 1px solid #f7e2c2;
+}
+
+.notesHead {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: var(--text-sm);
+  font-weight: 800;
+  color: var(--warning);
+}
+
+.notesText {
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  color: var(--ink-2);
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+/* ---------------------------------------------------------- 路线节点预览 */
+
+.emptyNode {
+  margin-top: 2px;
+}
+
+.nodeNote {
+  margin-top: 2px;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+/* ---------------------------------------------------------- 参与者 */
+
+.participants {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: 10px;
+}
+
+.participant {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 9px 11px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+.participantInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.participantName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.participantName :global(.tag) {
+  font-size: 10.5px;
+  padding: 1px 7px;
+}
+
+.participantRole {
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+.memberNote {
+  margin-top: var(--space-3);
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------- 组织者 */
+
+.orgHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.orgName {
+  font-size: var(--text-md);
+  font-weight: 800;
+}
+
+.orgMeta {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.orgBio {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--ink-2);
+  word-break: break-word;
+}
+
+.orgTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: var(--space-3);
+}
+
+.faintNote {
+  margin-top: var(--space-3);
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+/* ---------------------------------------------------------- 操作卡 */
+
+.actionCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.actionHint {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+.secondaryList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.safetyStrip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--r-md);
+  background: var(--info-soft);
+  color: var(--info);
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.safetyStrip svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+/* 我的申请状态 */
+.appBox {
+  padding: 12px;
+  border-radius: var(--r-md);
+  border: 1px dashed var(--line-strong);
+  background: var(--surface-2);
+}
+
+.appHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.appTitle {
+  font-size: var(--text-sm);
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.appMessage {
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  word-break: break-word;
+}
+
+.appMeta {
+  margin-top: 6px;
+  margin-bottom: 4px;
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+/* ---------------------------------------------------------- 申请弹窗 */
+
+.fieldHintRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.confirmBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.confirmRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.confirmLabel {
+  flex: none;
+  width: 34px;
+  color: var(--ink-3);
+  font-size: 12.5px;
+}
+
+.confirmValue {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.confirmNote {
+  display: block;
+  margin-top: 2px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line-strong);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+/* ---------------------------------------------------------- 移动端固定操作栏 */
+
+.bottomBar {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  /* 桌面侧栏在移动端折叠进正文下方，重点是底部固定栏 */
+  .side {
+    position: static;
+    display: flex;
+  }
+
+  .cover {
+    border-radius: var(--r-md);
+  }
+
+  .pageRoot {
+    /* 底部导航 + 固定操作栏 + 留白：正文滚到底时不会被栏遮住 */
+    padding-bottom: calc(var(--bottomnav-h) + 48px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .bottomBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    /* 紧贴底部导航上沿；底部导航自身已包含 safe-area 高度 */
+    bottom: calc(var(--bottomnav-h) + env(safe-area-inset-bottom, 0px));
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 12px 10px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -10px 26px -20px rgba(42, 29, 51, 0.4);
+  }
+
+  .bottomHint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    min-height: 32px;
+  }
+
+  .bottomHintText {
+    min-width: 0;
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: var(--ink-2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .bottomQuick {
+    display: flex;
+    flex: none;
+    gap: 6px;
+  }
+
+  .quickLink {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--r-full);
+    background: var(--surface-3);
+    color: var(--pink-600);
+  }
+
+  /* 右侧留出「演示工具」浮动按钮的位置，避免主按钮被遮住 */
+  .bottomAction {
+    padding-right: 92px;
+  }
+}
+
+@media (max-width: 560px) {
+  .title {
+    font-size: var(--text-xl);
+  }
+
+  .participants {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .participant {
+    padding: 8px 9px;
+    gap: 8px;
+  }
+
+  .participantName {
+    font-size: 12.5px;
+  }
+}
