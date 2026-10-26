@@ -54,12 +54,9 @@ export function AppShell() {
               </linearGradient>
             </defs>
             <rect x="2" y="2" width="36" height="36" rx="12" fill="url(#brandGrad)" />
-            <path
-              d="M13 12h6a2.5 2.5 0 0 1 0 5h-1v2h-2v-2h-1a2.5 2.5 0 0 1 0-5Zs8 8h6v6a2.5 2.5 0 0 1-5 0v-1h-1v-5Z"
-              fill="#fff"
-              opacity="0.92"
-            />
-            <circle cx="15" cy="14.5" r="1.4" fill="#ff5fa2" />
+            <path d="M14 12h5a2.4 2.4 0 0 1 0 4.8h-1v2.4h-2.4v-2.4h-1.6a2.4 2.4 0 0 1 0-4.8Z" fill="#fff" opacity="0.95" />
+            <path d="M23 21h5a2.4 2.4 0 0 1 0 4.8h-.8v2.4h-2.4v-2.4h-1.8a2.4 2.4 0 0 1 0-4.8Z" fill="#fff" opacity="0.72" />
+            <circle cx="16.5" cy="14.4" r="1.2" fill="#ff5fa2" />
           </svg>
           <div>
             <div className="brand__word">HOPPA</div>

@@ -21,6 +21,12 @@ npm run test:e2e    → 18 passed（desktop 14 + mobile 4）
 端到端用例文件：`e2e/flows.spec.ts`（桌面主流程）、`e2e/mobile.spec.ts`（375px 移动端）。
 单元测试文件：`src/domain/rules.test.ts`、`src/store/reducer.test.ts`、`src/lib/date.test.ts`。
 
+## 线上部署验证
+
+- 线上地址：**https://lier128.github.io/hoppa/**
+- 部署方式：GitHub Actions（`.github/workflows/deploy.yml`，push 到 `main` 自动构建并发布 Pages）
+- 线上验收（真实浏览器，2026-10-26）：标题正确、演示入口可见、首页 13 个活动链接、点击活动卡进入详情正常、控制台 0 报错。
+
 ## 功能验收
 
 | 用例 | 场景 | 结果 | 证据 |
