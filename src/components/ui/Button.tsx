@@ -44,24 +44,36 @@ export function Button(props: ButtonProps | LinkProps) {
   );
 
   if ('to' in props && props.to) {
-    const { onClick, title, 'aria-label': ariaLabel, 'aria-disabled': ariaDisabled } = props;
+    const { to, onClick, title } = props;
     return (
       <Link
-        to={props.to}
+        to={to}
         className={cls}
         onClick={onClick}
         title={title}
-        aria-label={ariaLabel}
-        aria-disabled={ariaDisabled}
+        aria-label={props['aria-label']}
+        aria-disabled={props['aria-disabled']}
       >
         {content}
       </Link>
     );
   }
 
-  const { to: _to, ...rest } = props as ButtonProps & { to?: undefined };
+  // 注意：iconLeft / iconRight 是组件私有属性，必须从 DOM 属性里剔除，
+  // 否则 React 会在 dev 模式报 "does not recognize the prop on a DOM element"
+  const {
+    variant: _variant,
+    size: _size,
+    block: _block,
+    iconLeft: _iconLeft,
+    iconRight: _iconRight,
+    children: _children,
+    className: _className,
+    to: _to,
+    ...domProps
+  } = props as ButtonProps;
   return (
-    <button type="button" className={cls} {...rest}>
+    <button type="button" className={cls} {...domProps}>
       {content}
     </button>
   );
