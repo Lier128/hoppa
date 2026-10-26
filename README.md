@@ -195,8 +195,19 @@ npm run test:e2e    → 17 passed（desktop 13 + mobile 4）
 6. 未在真机 iOS/Android 验证，移动端以 Chrome 375/390px 视口验证。
 7. 用户研究与可用性测试未执行；PRD 中的用户问题与假设仍需验证。
 
-## 文档索引
+## 更新仓库（本机网络环境的备用通道）
 
+本机 `github.com:443` 被网络阻断（`api.github.com` 正常），`git push` 会超时。
+仓库里的 `scripts/push-to-github.mjs` 用 Git Data API 完成推送，效果与 `git push` 等价：
+
+```powershell
+$env:GH_TOKEN = "<token>"       # 需要 repo + workflow 权限
+node scripts/push-to-github.mjs "feat: 更新说明"
+```
+
+在网络正常的环境里直接 `git push origin main` 即可。
+
+## 文档索引
 | 文档 | 内容 |
 |---|---|
 | [docs/product/HOPPA_PRD_v1.0.md](docs/product/HOPPA_PRD_v1.0.md) | 产品需求文档（定位、范围、指标、数据模型、验收标准） |
